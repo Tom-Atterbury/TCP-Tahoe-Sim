@@ -45,7 +45,7 @@ uint16_t fastReTransmitt(int SD, uint16_t SN, char* data, int** dataState){
         int errsv = errno;
 
         // Timeout detection
-        if(errsv = EWOULDBLOCK) {
+        if(errsv == EWOULDBLOCK) {
           // Timeout: Retransmit SN
           printf("Timeout\n");
           break;
